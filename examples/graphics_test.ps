@@ -1,0 +1,24 @@
+% Minimal Graphics Test
+newpath
+100 100 moveto
+200 100 lineto
+200 200 lineto
+100 200 lineto
+closepath
+0 0 1 setrgbcolor
+2 setlinewidth
+stroke
+
+% Draw a filled triangle with transformation
+gsave
+50 50 translate
+1 0 0 setrgbcolor
+newpath
+0 0 moveto
+100 0 lineto
+50 86.6 lineto
+closepath
+fill
+grestore
+
+showpage 

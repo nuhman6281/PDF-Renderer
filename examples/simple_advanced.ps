@@ -1,0 +1,28 @@
+% Simple Advanced Features Test
+% Testing basic array and procedure operations
+
+% Test array creation
+(Testing array creation:) show
+5 array dup
+(Array created with size 5) show
+
+% Test array put operation
+0 (Hello) put
+(Stored 'Hello' at index 0) show
+
+% Test array get operation
+0 get show
+
+% Test procedure definition and execution
+(Testing procedures:) show
+/square { dup mul } def
+5 square show
+
+% Test control flow
+(Testing control flow:) show
+true {(Condition is true) show} if
+false {(This won't show) show} if
+
+% Test comparison
+(Testing comparison:) show
+5 3 gt {(5 is greater than 3) show} {(5 is not greater than 3) show} ifelse 

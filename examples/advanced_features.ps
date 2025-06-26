@@ -1,0 +1,114 @@
+% Advanced PostScript Features Test
+% Demonstrates arrays, dictionaries, procedures, and control flow
+
+% ===== ARRAY OPERATIONS =====
+(Testing Arrays:) show
+
+% Create an array and populate it
+5 array dup
+0 (Hello) put
+1 42 put
+2 3.14 put
+3 true put
+4 [1 2 3] put
+
+% Display array contents
+(Array contents:) show
+0 get show
+1 get show
+2 get show
+3 get show
+4 get show
+
+% Test array length
+length show
+
+% Test aload and astore
+(aload test:) show
+aload
+(Stack after aload:) show
+stack print
+clear
+
+% ===== DICTIONARY OPERATIONS =====
+(Testing Dictionaries:) show
+
+% Create a dictionary
+10 dict dup
+
+% Store some values
+/name (John) put
+/age 30 put
+/active true put
+/scores [85 92 78] put
+
+% Test known
+/name known show
+/unknown known show
+
+% Test keys
+keys show
+
+% ===== PROCEDURES =====
+(Testing Procedures:) show
+
+% Define a simple procedure
+/square { dup mul } def
+
+% Execute it
+5 square show
+
+% Define a procedure with parameters
+/add_and_show { add show } def
+10 20 add_and_show
+
+% ===== CONTROL FLOW =====
+(Testing Control Flow:) show
+
+% Test if statement
+true {(Condition is true) show} if
+false {(This won't show) show} if
+
+% Test ifelse statement
+5 3 gt {(5 is greater than 3) show} {(5 is not greater than 3) show} ifelse
+3 5 gt {(3 is greater than 5) show} {(3 is not greater than 5) show} ifelse
+
+% Test repeat loop
+(Counting to 5:) show
+5 {(Count: ) show dup show} repeat
+
+% Test for loop
+(For loop 1 to 10 by 2:) show
+1 10 2 {(Value: ) show dup show} for
+
+% ===== COMPLEX EXAMPLE =====
+(Complex Example - Array Processing:) show
+
+% Create an array of numbers
+[10 20 30 40 50] dup
+
+% Define a procedure to double a number
+/double { 2 mul } def
+
+% Use forall to double each element
+{ double } forall
+
+% Display results
+(Original: [10 20 30 40 50]) show
+(Doubled: ) show
+aload
+5 { show } repeat
+clear
+
+% Graphics test
+(newpath) show
+newpath
+100 100 moveto
+200 100 lineto
+200 200 lineto
+100 200 lineto
+closepath
+0 0 1 setrgbcolor
+2 setlinewidth
+stroke
+showpage 

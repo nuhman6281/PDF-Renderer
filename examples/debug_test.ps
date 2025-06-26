@@ -1,0 +1,24 @@
+% Debug test for array and procedure operations
+
+% Test array operations step by step
+(Step 1: Create array) show
+5 array dup
+(Array created) show
+
+% Test array put
+(Step 2: Put value in array) show
+0 (Hello) put
+(Value put) show
+
+% Test array get
+(Step 3: Get value from array) show
+0 get show
+
+% Test procedure definition
+(Step 4: Define procedure) show
+/square { dup mul } def
+(Procedure defined) show
+
+% Test procedure execution
+(Step 5: Execute procedure) show
+5 square show 
